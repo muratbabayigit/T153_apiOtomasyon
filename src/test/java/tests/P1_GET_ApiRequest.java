@@ -36,12 +36,22 @@ public class P1_GET_ApiRequest {
             Response response=given().when().get(url);
 
            // 4-Assertion işlemleri yapılır
-            response.then().assertThat().statusCode(200)
-                                        .contentType("application/json; charset=utf-8")
-                                        .header("Server","Cowboy")
-                                        .statusLine("HTTP/1.1 200 OK");
-                                         System.out.println(response.getTime()+" ms");
+            //Otomasyonla Kontrol
+           //response.then().assertThat().statusCode(200)
+           //                            .contentType("application/json; charset=utf-8")
+           //                            .header("Server","Cowboy")
+           //                            .statusLine("HTTP/1.1 200 OK");
+           //                             System.out.println(response.getTime()+" ms");
 
+            //Manuel Kontrol
+            response.prettyPrint(); //cevabın içeriğini yazdırır
+            response.prettyPeek();
+
+            System.out.println("Process time:"+response.getTime());
+            System.out.println("Status Code:"+response.getStatusCode());
+            System.out.println("Status Line"+response.getStatusLine());
+            System.out.println("Server Header"+response.getHeader("Server"));
+            System.out.println("Content Type"+response.contentType());
 
 
         }
