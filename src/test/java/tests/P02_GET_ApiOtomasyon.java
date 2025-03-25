@@ -22,6 +22,7 @@ public class P02_GET_ApiOtomasyon {
     public void test01(){
        String url="https://restful-booker.herokuapp.com/booking/10 ";
 
+
        //Response response=given().when().get(url);
        Response response= RestAssured.get(url);
 

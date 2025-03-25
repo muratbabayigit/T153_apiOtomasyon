@@ -5,7 +5,7 @@ import org.junit.jupiter.api.Test;
 
 import static io.restassured.RestAssured.given;
 
-public class P1_GET_ApiRequest {
+public class P01_GET_ApiRequest {
         /*
     https://restful-booker.herokuapp.com/booking/10 url’ine
     bir GET request gonderdigimizde donen Response’un,
@@ -44,14 +44,14 @@ public class P1_GET_ApiRequest {
            //                             System.out.println(response.getTime()+" ms");
 
             //Manuel Kontrol
-            response.prettyPrint(); //cevabın içeriğini yazdırır
-            response.prettyPeek();
+           // response.prettyPrint(); //cevabın içeriğini yazdırır
+          //  response.prettyPeek();
 
-            System.out.println("Process time:"+response.getTime());
+            System.out.println("Process Time:"+response.getTime());
             System.out.println("Status Code:"+response.getStatusCode());
-            System.out.println("Status Line"+response.getStatusLine());
-            System.out.println("Server Header"+response.getHeader("Server"));
-            System.out.println("Content Type"+response.contentType());
+            System.out.println("Status Line: "+response.getStatusLine());
+            System.out.println("Server Header:"+response.getHeader("Server"));
+            System.out.println("Content Type: "+response.getContentType());
 
 
         }
