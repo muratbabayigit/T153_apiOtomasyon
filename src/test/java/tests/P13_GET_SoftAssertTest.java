@@ -13,7 +13,7 @@ public class P13_GET_SoftAssertTest {
    bir GET request gonderdigimizde donen response'un asagidaki gibi oldugunu test edin.
 
        {
-           "status":"success",
+           "status":"success" ,
            "data":{
                      "id": 12,
                      "employee_name": "Quinn Flynn",
