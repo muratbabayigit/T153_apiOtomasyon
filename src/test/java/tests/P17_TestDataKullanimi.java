@@ -34,7 +34,9 @@ public class P17_TestDataKullanimi extends BaseUrl_JPH {
     public void test01(){
         specJPH.pathParams("pp1","posts","pp2","22");
         //GET---> request Body yok
-        JSONObject expBody=TestDatas_JPH.expDataOlustur();
+        // JSONObject expBody=TestDatas_JPH.expDataOlustur();
+
+        JSONObject expBody=TestDatas_JPH.expDataCreate("dolor sint quo a velit explicabo quia nam","merhaba",3,22);
 
         Response response=given().spec(specJPH).when().get("/{pp1}/{pp2}");
 
