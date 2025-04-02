@@ -3,6 +3,9 @@ package testDatas;
 import org.json.JSONObject;
 import org.testng.annotations.Test;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class TestDatas_HerOkuApp {
     public static int basarliStatusCode=200;
      /*
@@ -69,6 +72,28 @@ public class TestDatas_HerOkuApp {
         JSONObject booking=reqDataOlustur();
         expData.put("booking",booking);
         return expData;
+    }
+
+    public static Map<String,Object> reqMapOlustur(){
+        Map<String,Object> reqMapBody=new HashMap<>();
+        Map<String,Object> innerMap=new HashMap<>();
+        innerMap.put("checkin","2025-05-01");
+        innerMap.put("checkout","2025-05-10");
+        reqMapBody.put("firstname","Ahmet");
+        reqMapBody.put("lastname","Bulut");
+        reqMapBody.put("totalprice",250.0);
+        reqMapBody.put("depositpaid",true);
+        reqMapBody.put("bookingdates",innerMap);
+        reqMapBody.put("additionalneeds","wi-fi");
+
+        return reqMapBody;
+    }
+
+    public static Map<String,Object> expMapOlustur(){
+        Map<String,Object> expMapBody=new HashMap<>();
+        expMapBody.put("bookingid",24);
+        expMapBody.put("booking",reqMapOlustur());
+        return expMapBody;
     }
 
 
