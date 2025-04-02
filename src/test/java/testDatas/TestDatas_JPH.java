@@ -2,6 +2,9 @@ package testDatas;
 
 import org.json.JSONObject;
 
+import java.util.HashMap;
+import java.util.Map;
+
 public class TestDatas_JPH {
 
     public static int basarliStatusCode=200;
@@ -38,5 +41,22 @@ public class TestDatas_JPH {
 
         return expData;
 
+    }
+
+    public static Map<String, Object> mapBodyOlustur(){
+        Map<String,Object> mapBody=new HashMap<>();
+        mapBody.put("title","Ahmet");
+        mapBody.put("body","Merhaba");
+        mapBody.put("userId",10.0);
+        mapBody.put("id",70.0);
+        return mapBody;
+    }
+    public static Map<String, Object> mapBodyCreate(String title, String body, double userId, double id){
+        Map<String,Object> mapBody=new HashMap<>();
+        mapBody.put("title",title);
+        mapBody.put("body",body);
+        mapBody.put("userId",userId);
+        mapBody.put("id",id);
+        return mapBody;
     }
 }
