@@ -1,8 +1,15 @@
 package tests;
 
 import baseUrl.BaseUrl_JPH;
+import io.restassured.http.ContentType;
+import io.restassured.response.Response;
+import org.testng.Assert;
 import org.testng.annotations.Test;
-import pojos.PojoClas_JPH;
+import pojos.POJO_JPH;
+
+import static io.restassured.RestAssured.given;
+import static org.testng.Assert.assertEquals;
+import static org.testng.Assert.assertTrue;
 
 public class P23_PUT_pojoClass extends BaseUrl_JPH {
     /*
@@ -30,10 +37,22 @@ public class P23_PUT_pojoClass extends BaseUrl_JPH {
  */
     @Test
     public void test01(){
-        specJPH.pathParams("pp1","posts","pp2","70");
-        PojoClas_JPH reqPojo=new PojoClas_JPH("Ahmet","Merhaba",10,70);
+        specJPH.pathParams("pp1","posts","pp2","70");  //Endpoint hazırlandı
+        POJO_JPH reqPOJO=new POJO_JPH("Ahmet","Merhaba",10,70); //requestBody pojo class yardımıyla hazırlandı
 
-        PojoClas_JPH expPojo=new PojoClas_JPH("Ahmet","Merhaba",10,70);
+        POJO_JPH expPOJO=new POJO_JPH("Ahmet","Merhaba",10,70);//expectedBody pojo class yardımıyla hazırlandı
+
+        Response response=given().contentType(ContentType.JSON).when().spec(specJPH).body(reqPOJO).put("/{pp1}/{pp2}"); //Response kayıt edildi
+
+        POJO_JPH resPOJO=response.as(POJO_JPH.class);
+        //içerik karşılaştırması yapılabilmesi için dönen cevap POJO türüne çevrildi
+
+        //assert yapıldı
+        assertEquals(resPOJO.getTitle(),expPOJO.getTitle());
+        assertEquals(resPOJO.getBody(),expPOJO.getBody());
+        assertEquals(resPOJO.getUserId(),expPOJO.getUserId());
+        assertEquals(resPOJO.getId(),expPOJO.getId());
 
     }
+
 }

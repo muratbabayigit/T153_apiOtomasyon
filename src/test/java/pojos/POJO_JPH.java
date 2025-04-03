@@ -1,13 +1,12 @@
 package pojos;
 
-public class PojoClas_JPH {
-    /*
-    {
+public class POJO_JPH {
+
+   /*
         "title":"Ahmet",
         "body":"Merhaba",
         "userId":10,
         "id":70
-        }
      */
     //1-Tüm variable'lar private olarak oluşturulur
     private String title;
@@ -15,7 +14,8 @@ public class PojoClas_JPH {
     private int userId;
     private int id;
 
-    //2-tüm variable'lar için getter ve setter oluşturulur
+    //2-Tüm variable'lar için getter and setter metodları oluşturulur
+
 
     public String getTitle() {
         return title;
@@ -49,29 +49,29 @@ public class PojoClas_JPH {
         this.id = id;
     }
 
-    //3-parametreli constructor oluşturulur
+    //3-Tüm parametreleri içeren bir parametreli constructor oluşturuyoruz
 
-    public PojoClas_JPH(String title, String body, int userId, int id) {
+    public POJO_JPH(String title, String body, int userId, int id) {
         this.title = title;
         this.body = body;
         this.userId = userId;
         this.id = id;
     }
 
-    //4-parametresiz constructor oluşturulur
+    //4-Parametresiz bir constructor oluşturalım
 
-    public PojoClas_JPH() {
+    public POJO_JPH() {
     }
 
-    //5-toString oluşturulur
+    //5-toString methodu oluşturulur
+
 
     @Override
     public String toString() {
-        return "PojoClas_JPH{" +
-                "title='" + title + '\'' +
-                ", body='" + body + '\'' +
-                ", userId=" + userId +
-                ", id=" + id +
-                '}';
+        return "POJO_JPH:\n" +
+                "title=" + title + "\n" +
+                "body=" + body + "\n" +
+                "userId=" + userId +"\n" +
+                "id=" + id ;
     }
 }
