@@ -64,13 +64,13 @@ public class P24_POST_PojoKullanimi extends BaseUrl_RestFull {
 
      //4-Assertion işlemleri
 
-    assertEquals(resPOJO.getBooking().getFirstname(),expBody.getBooking().getFirstname());
-    assertEquals(resPOJO.getBooking().getLastname(),expBody.getBooking().getLastname());
-    assertEquals(resPOJO.getBooking().getTotalprice(),expBody.getBooking().getTotalprice());
-    assertEquals(resPOJO.getBooking().isDepositpaid(),expBody.getBooking().isDepositpaid());
-    assertEquals(resPOJO.getBooking().getBookingdates().getCheckin(),expBody.getBooking().getBookingdates().getCheckin());
-    assertEquals(resPOJO.getBooking().getBookingdates().getCheckout(),expBody.getBooking().getBookingdates().getCheckout());
-    assertEquals(resPOJO.getBooking().getAdditionalneeds(),expBody.getBooking().getAdditionalneeds());
+        assertEquals(resPOJO.getBooking().getFirstname(),expBody.getBooking().getFirstname());
+        assertEquals(resPOJO.getBooking().getLastname(),expBody.getBooking().getLastname());
+        assertEquals(resPOJO.getBooking().getTotalprice(),expBody.getBooking().getTotalprice());
+        assertEquals(resPOJO.getBooking().isDepositpaid(),expBody.getBooking().isDepositpaid());
+        assertEquals(resPOJO.getBooking().getBookingdates().getCheckin(),expBody.getBooking().getBookingdates().getCheckin());
+        assertEquals(resPOJO.getBooking().getBookingdates().getCheckout(),expBody.getBooking().getBookingdates().getCheckout());
+        assertEquals(resPOJO.getBooking().getAdditionalneeds(),expBody.getBooking().getAdditionalneeds());
 }
 
 }
